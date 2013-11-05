@@ -17,15 +17,19 @@ app.use(express.logger('dev'));
 app.use(express.bodyParser());
 
 app.get('/', function(req, res){
-  
-  res.render('index', {
-    title: 'endpointer'
-  });
+
+  var files = ['a', 'b', 'c'];
 
   fs.readdir("endpoints/", function(err, files) {
     if (err) throw err;
     console.log(files);
   });
+  
+  res.render('index', {
+    title: 'endpointer',
+    files: files
+  });
+
 
   res.end();
 
