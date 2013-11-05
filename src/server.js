@@ -8,16 +8,27 @@ var app = express();
 var port = 80;
 
 app.use(express.static(__dirname + '/endpoints'));
+
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jade');
 app.use(express.logger('dev'));
+
 app.use(express.bodyParser());
 
-app.get('/', function(req, res) {
-  var body = '<form action="/" method="post">' + 'path <input type="text" id="path" name="path"></input>' + 'json <input type="text" id="json" name="json"></input>' + '<input type="submit" value="submit"></input>' + '</form>';
+app.get('/', function(req, res){
+  
+  res.render('index', {
+    title: 'endpointer'
+  });
 
-  res.setHeader('Content-Type', 'text/html; charset=utf-8');
-  res.setHeader('Content-Length', body.length);
+  fs.readdir("endpoints/", function(err, files) {
+    if (err) throw err;
+    console.log(files);
+  });
 
-  res.end(body);
+  res.end();
+
 });
 
 app.post('/', function(req, res) {
