@@ -16,22 +16,17 @@ app.use(express.logger('dev'));
 
 app.use(express.bodyParser());
 
-app.get('/', function(req, res){
-
-  var files = ['a', 'b', 'c'];
+app.get('/', function(req, res) {
 
   fs.readdir("endpoints/", function(err, files) {
     if (err) throw err;
-    console.log(files);
+    else {
+      res.render('index', {
+        files: files
+      });
+      res.end();
+    }
   });
-  
-  res.render('index', {
-    title: 'endpointer',
-    files: files
-  });
-
-
-  res.end();
 
 });
 
