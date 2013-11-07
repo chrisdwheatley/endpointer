@@ -9,4 +9,5 @@ block content
 
   ul
     each file in files
-      li= file
+      li
+        a(href=file) #{file}
