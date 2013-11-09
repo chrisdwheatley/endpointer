@@ -1,14 +1,15 @@
 var express = require('express');
 var fs = require('fs');
 var path = require('path');
+var _ = require('lodash');
 var mkdirp = require('mkdirp');
+var readdirp = require('readdirp');
 
 var app = express();
 
 var port = 80;
 
 app.use(express.static(__dirname + '/endpoints'));
-
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
@@ -18,14 +19,13 @@ app.use(express.bodyParser());
 
 app.get('/', function(req, res) {
 
-  fs.readdir("endpoints/", function(err, files) {
+  readdirp({
+    root: 'endpoints'
+  }, function(err, files) {
     if (err) throw err;
-    else {
-      res.render('index', {
-        files: files
-      });
-      res.end();
-    }
+    res.render('index', {
+      files: files.files
+    });
   });
 
 });
