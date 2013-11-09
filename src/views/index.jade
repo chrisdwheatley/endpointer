@@ -1,13 +1,15 @@
 extend layout
 block content
   form(action='/', method='post')
-    | path 
-    input#path(type='text', name='path')
-    | json 
-    input#json(type='text', name='json')
+    | Path 
+    input#path(type='text', name='path' placeholder='File Path' autofocus required)
+    | JSON 
+    input#json(type='text', name='json' placeholder='Valid JSON' required)
     input(type='submit', value='submit')
 
   ul
     each file in files
       li
-        a(href=file.path) #{file.path}
+        a(href=file.path) #{file.path} 
+        | delete
+        | copy path
