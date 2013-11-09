@@ -1,7 +1,6 @@
-var express = require('express');
 var fs = require('fs');
 var path = require('path');
-var _ = require('lodash');
+var express = require('express');
 var mkdirp = require('mkdirp');
 var readdirp = require('readdirp');
 
