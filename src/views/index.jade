@@ -2,10 +2,12 @@ extend layout
 block content
   form(action='/', method='post')
     | Path 
-    input#path(type='text', name='path' placeholder='File Path' autofocus required)
+    input#path(type='text', name='path', placeholder='File Path', autofocus, required)
+    br
     | JSON 
-    input#json(type='text', name='json' placeholder='Valid JSON' required)
-    input(type='submit', value='submit')
+    textarea(name='json', rows='10', cols='50', placeholder='JSON', required)
+    br
+    input(type='submit', value='Add')
 
   ul
     each file in files
