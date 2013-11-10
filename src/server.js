@@ -15,6 +15,8 @@ app.use(function(req, res, next) {
 });
 
 app.use(express.static(__dirname + '/endpoints'));
+app.use("/css", express.static(__dirname + '/css'));
+app.use("/vendor", express.static(__dirname + '/vendor'));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
