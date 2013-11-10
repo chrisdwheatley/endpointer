@@ -73,25 +73,25 @@ body {
     ALL: Orange Theme
    =================== */
 
-.header-container {
+/*.header-container {
     border-bottom: 20px solid #e44d26;
-}
+}*/
 
-.footer-container,
+/*.footer-container,
 .main aside {
     border-top: 20px solid #e44d26;
-}
+}*/
 
-.header-container,
+/*.header-container,
 .footer-container,
 .main aside {
     background: #f16529;
-}
+}*/
 
-.title {
+/*.title {
     color: white;
 }
-
+*/
 /* ==============
     MOBILE: Menu
    ============== */
@@ -216,12 +216,12 @@ nav a:hover {
     WIDE: CSS3 Effects
    ==================== */
 
-    .header-container,
+   /* .header-container,
     .main aside {
         -webkit-box-shadow: 0 5px 10px #aaa;
            -moz-box-shadow: 0 5px 10px #aaa;
                 box-shadow: 0 5px 10px #aaa;
-    }
+    }*/
 
 /* ============
     WIDE: Menu
