@@ -5,13 +5,13 @@ block content
   h2 Add Endpoint
 
   form(action='/', method='post')
-    | Path 
+    | Path: 
     input#path(type='text', name='path', placeholder='File Path', autofocus, required)
     br
-    | JSON 
-    textarea(name='json', rows='10', cols='50', placeholder='JSON', required)
+    | JSON: 
+    textarea(name='json', rows='10', placeholder='JSON', required)
     br
-    input(type='submit', value='Add Endpoint')
+    button(type='submit') Add Endpoint
 
   h2 Available Endpoints
 
