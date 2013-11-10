@@ -1,10 +1,23 @@
 !!!5
+
 html
+
   head
+
     title Endpointer
+    link(rel='stylesheet', href='css/normalize.min.css')
+    link(rel='stylesheet', href='css/main.css')
+    meta(charset='utf-8')
+    meta(name='description', content='')
+    meta(name='viewport', content='width=device-width')
+
   body
-    header
-      h1 Endpointer
-    .container
-      .main-content
+
+    .header-container
+      header.wrapper.clearfix
+        h1.title Endpointer
+    .main-container
+      .main.wrapper.clearfix
         block content
+        
+    script(src='vendor/modernizr-2.6.2-respond-1.1.0.min.js')
