@@ -32,7 +32,9 @@ app.get('/', function(req, res) {
   }, function(err, files) {
     if (err) throw err;
     res.render('index', {
-      files: files.files
+      files: files.files,
+      title: 'Endpointer',
+      subtitle: 'Rapidly serve JSON endpoints to your front end application'
     });
   });
 

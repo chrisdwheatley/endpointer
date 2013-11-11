@@ -4,7 +4,7 @@ html
 
   head
 
-    title Endpointer - Rapidly serve JSON endpoints for your front end application
+    title #{title} - #{subtitle}
     link(rel='stylesheet', href='css/normalize.min.css')
     link(rel='stylesheet', href='css/main.css')
     meta(charset='utf-8')
@@ -15,10 +15,10 @@ html
 
     .header-container
       header.wrapper.clearfix
-        h1.title Endpointer
+        h1.title #{title}
         br
         br
-        h2.subtitle Rapidly serve JSON endpoints for your front end application
+        h2.subtitle #{subtitle}
     .main-container
       .main.wrapper.clearfix
         block content
