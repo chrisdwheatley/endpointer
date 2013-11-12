@@ -27,7 +27,7 @@ app.use(express.bodyParser());
 app.get('/', function(req, res) {
 
   readdirp({
-    root: 'endpoints',
+    root: '/endpoints',
     fileFilter: '*.json'
   }, function(err, files) {
     if (err) throw err;
