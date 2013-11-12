@@ -27,7 +27,7 @@ app.use(express.bodyParser());
 app.get('/', function(req, res) {
 
   readdirp({
-    root: '/endpoints',
+    root: __dirname + '/endpoints',
     fileFilter: '*.json'
   }, function(err, files) {
     if (err) throw err;
@@ -44,7 +44,7 @@ app.post('/', function(req, res) {
 
   var input = req.body.path;
   var file = path.basename(input);
-  var endpointPath = 'endpoints/' + input;
+  var endpointPath = __dirname + '/endpoints/' + input;
   var dir = path.dirname(endpointPath);
   var json = req.body.json;
 
