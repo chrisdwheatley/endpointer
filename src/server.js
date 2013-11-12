@@ -6,7 +6,7 @@ var readdirp = require('readdirp');
 
 var app = express();
 
-var port = 80;
+var port = process.env.PORT || 80;
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -41,14 +41,14 @@ app.get('/', function(req, res) {
 });
 
 app.post('/', function(req, res) {
-  res.redirect('/');
 
   var input = req.body.path;
   var file = path.basename(input);
   var endpointPath = 'endpoints/' + input;
   var dir = path.dirname(endpointPath);
-
   var json = req.body.json;
+
+  res.redirect('/');
 
   mkdirp(dir, function(err) {
     if (err) {
@@ -64,10 +64,8 @@ app.post('/', function(req, res) {
     }
   });
 
-  res.end();
-
 });
 
-app.listen(port);
-
-console.log('Listening on port %s', port);
+app.listen(port, function() {
+  console.log("Listening on " + port);
+});
