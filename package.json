@@ -1,8 +1,15 @@
 {
   "name": "endpointer",
-  "version": "0.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.1",
+  "description": "rapidly serve json endpoints to your front end application",
+  "author": "Chris Wheatley",
+  "private": true,
+  "license": "MIT",
+  "keywords": [
+    "json",
+    "endpoint",
+    "upload"
+  ],
   "dependencies": {
     "express": "~3.4.4",
     "mkdirp": "~0.3.5",
@@ -12,8 +19,9 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "grunt test"
-  },
-  "author": "Chris Wheatley",
-  "license": "MIT"
+    "start": "node src/server.js"
+  },  
+  "engines": {
+    "node": ">= 0.10.0"
+  }
 }
