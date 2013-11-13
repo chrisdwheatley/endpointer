@@ -1,12 +1,21 @@
 var fs = require('fs');
 var path = require('path');
 var express = require('express');
+var program = require('commander');
 var mkdirp = require('mkdirp');
 var readdirp = require('readdirp');
 
-var app = express();
+program
+  .option('h, heroku', 'heroku deployment')
+  .parse(process.argv);
 
-var port = process.env.PORT || 5000;
+if (program.heroku) {
+  var port = process.env.PORT;
+} else {
+  var port = 80;
+};
+
+var app = express();
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
