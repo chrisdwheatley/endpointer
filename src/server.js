@@ -6,7 +6,7 @@ var mkdirp = require('mkdirp');
 var readdirp = require('readdirp');
 
 program
-  .option('h, heroku', 'heroku deployment')
+  .option('-h, heroku', 'heroku deployment')
   .parse(process.argv);
 
 if (program.heroku) {
