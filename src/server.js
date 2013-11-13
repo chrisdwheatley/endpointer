@@ -5,14 +5,18 @@ var program = require('commander');
 var mkdirp = require('mkdirp');
 var readdirp = require('readdirp');
 
+var config = {
+  portNumber: 80
+};
+
 program
-  .option('-h, heroku', 'heroku deployment')
+  .option('h, heroku', 'heroku deployment')
   .parse(process.argv);
 
 if (program.heroku) {
-  var port = process.env.PORT;
+  var port = process.env.PORT || config.portNumber;
 } else {
-  var port = 80;
+  var port = config.portNumber;
 };
 
 var app = express();
