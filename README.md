@@ -50,6 +50,3 @@ This is very much an alpha release, there are many more features planned, includ
 
 Endpointer is released under the MIT license:
 [opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)
-
-
-
