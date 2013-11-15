@@ -10,6 +10,13 @@
     "endpoint",
     "upload"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/swirlycheetah/endpointer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/swirlycheetah/endpointer/issues"
+  },
   "dependencies": {
     "express": "~3.4.4",
     "mkdirp": "~0.3.5",
@@ -20,7 +27,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node src/server.js"
-  },  
+  },
   "engines": {
     "node": ">= 0.10.0"
   }
