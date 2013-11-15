@@ -6,17 +6,18 @@ var mkdirp = require('mkdirp');
 var readdirp = require('readdirp');
 
 var config = {
-  portNumber: 80
+  defaultPort: 80
 };
 
 program
   .option('h, heroku', 'heroku deployment')
+  .option('p, port [number]', 'port [number]')
   .parse(process.argv);
 
 if (program.heroku) {
-  var port = process.env.PORT || config.portNumber;
+  var port = process.env.PORT;
 } else {
-  var port = config.portNumber;
+  var port = program.port || config.defaultPort;
 };
 
 var app = express();
@@ -80,5 +81,5 @@ app.post('/', function(req, res) {
 });
 
 app.listen(port, function() {
-  console.log("Listening on " + port);
+  console.log("Listening on port " + port);
 });
