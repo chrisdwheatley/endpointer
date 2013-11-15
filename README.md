@@ -17,25 +17,38 @@ Endpointer is being developed with the aim of being a deployable instance access
 
 #### Local Machine
 
-*Endpointer will currently run on port 80, you can change this in the config within `src/server.js`.*
-
 Clone the repository
+```
+$ git clone git@github.com:swirlycheetah/endpointer.git
+```
 
-`$ git clone git@github.com:swirlycheetah/endpointer.git`
+Switch to the Endpointer folder
 
-cd into to folder
-
-`$ cd endpointer`
+```
+$ cd endpointer
+```
 
 Install the required dependencies
 
-`$ npm install`
+```
+$ npm install
+```
 
 Start the application
 
-`$ node src/server.js`
+*By default Endpointer runs on port 80, you can amend this by passing though a port argument followed by the desired port number.*
 
-Open the application within your browser by visiting `localhost`.
+```
+$ node src/server.js
+```
+
+or
+
+```
+$ node src/server.js port <port number>
+```
+
+Open the application within your browser by visiting `localhost` or `localhost:<port number>` respectively to begin uploading endpoints.
 
 ## Roadmap
 
