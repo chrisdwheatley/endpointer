@@ -1,1 +1,1 @@
-web: node src/server.js heroku
+web: node src/endpointer.js heroku
