@@ -39,13 +39,13 @@ Start the application
 *By default Endpointer runs on port 80, you can amend this by passing though a port argument followed by the desired port number.*
 
 ```
-$ node src/server.js
+$ node src/endpointer.js
 ```
 
 or
 
 ```
-$ node src/server.js port <port number>
+$ node src/endpointer.js port <port number>
 ```
 
 Open the application within your browser by visiting `localhost` or `localhost:<port number>` respectively to begin uploading endpoints.
